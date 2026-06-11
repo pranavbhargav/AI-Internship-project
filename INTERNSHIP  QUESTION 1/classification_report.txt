@@ -1,0 +1,59 @@
+================================================================================
+SUPERVISED CLASSIFICATION MODEL COMPARISON REPORT
+================================================================================
+Dataset: Breast Cancer Wisconsin Diagnostic (569 samples, 30 features)
+Task: Binary classification (Malignant vs. Benign)
+Split: 80% train (455 samples) / 20% test (114 samples)
+
+--------------------------------------------------------------------------------
+5-FOLD CROSS-VALIDATION PERFORMANCE:
+--------------------------------------------------------------------------------
+Logistic Regression:
+  - Accuracy:  97.36%
+  - Precision: 96.72%
+  - Recall:    99.16%
+  - F1-Score:  97.93%
+  - ROC-AUC:   0.9947
+
+Random Forest:
+  - Accuracy:  95.25%
+  - Precision: 95.83%
+  - Recall:    96.64%
+  - F1-Score:  96.23%
+  - ROC-AUC:   0.9884
+
+--------------------------------------------------------------------------------
+HELD-OUT TEST SET PERFORMANCE (20% Split):
+--------------------------------------------------------------------------------
+Logistic Regression:
+  - Accuracy:  98.25%
+  - Precision: 98.61%
+  - Recall:    98.61%
+  - F1-Score:  98.61%
+  - ROC-AUC:   0.9954
+
+Random Forest:
+  - Accuracy:  95.61%
+  - Precision: 95.89%
+  - Recall:    97.22%
+  - F1-Score:  96.55%
+  - ROC-AUC:   0.9932
+
+--------------------------------------------------------------------------------
+MODEL SELECTION SUMMARY:
+--------------------------------------------------------------------------------
+Selected Model: Logistic Regression
+Justification: Logistic Regression performed consistently better across both
+5-Fold CV and the held-out test set, obtaining a test Accuracy of 98.25% and
+an ROC-AUC of 0.9954. Given the clinical importance of high recall (minimizing
+False Negatives), Logistic Regression's test recall of 98.61% is optimal. The 
+linear separability of the scaled Breast Cancer dataset features makes Logistic
+Regression a highly suitable, regularized, and robust choice.
+
+Top 5 Features (Random Forest Importance):
+1. worst area (13.56%)
+2. worst perimeter (12.42%)
+3. worst concave points (11.92%)
+4. worst radius (8.98%)
+5. mean concave points (8.79%)
+================================================================================
